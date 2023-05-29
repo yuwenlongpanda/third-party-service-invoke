@@ -1,16 +1,21 @@
 package org.example.controller;
 
-import org.example.openfeign.HelloService;
+import org.example.openfeign.HelloApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class callApiController {
+@RequestMapping("/test")
+public class TestController {
     @Autowired
-    private HelloService helloService;
-    @GetMapping("/callApi")
-    public User callApi(){
-        return helloService.callMyApi();
+    private HelloApi helloApi;
+
+    @GetMapping("/call")
+    public String callApi(){
+        return "Hello OpenFeign, " + helloApi.helloBoot();
     }
+
+
 }

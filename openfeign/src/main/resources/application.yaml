@@ -1,2 +1,11 @@
 server:
-  port: 8801
+  port: 8802
+
+feign:
+  client:
+    config:
+      default: # 设置的全局超时时间
+        connectTimeout: 2000 # 请求连接的超时时间
+        readTimeout: 5000 # 请求处理的超时时间
+  httpclient: # 开启 HttpClient
+    enabled: true

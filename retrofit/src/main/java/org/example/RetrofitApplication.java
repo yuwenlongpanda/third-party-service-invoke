@@ -1,15 +1,15 @@
 package org.example;
 
+import com.github.lianjiatech.retrofit.spring.boot.annotation.RetrofitScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients(basePackages = "org.example.openfeign")
-public class OpenFeignApplication {
+@RetrofitScan(basePackages = "org.example.retrofit")
+public class RetrofitApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(OpenFeignApplication.class, args);
+        SpringApplication.run(RetrofitApplication.class, args);
     }
 
 }
